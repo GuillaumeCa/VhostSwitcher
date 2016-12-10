@@ -1,5 +1,5 @@
 #!/usr/bin/python
-from Cocoa import NSWindowController, NSApplication, objc, NSApp
+from Cocoa import NSWindowController, NSApplication, objc, NSApp, NSTableViewAnimationEffectFade
 from Foundation import NSObject, NSIndexSet
 import os
 import json
@@ -83,7 +83,7 @@ class Data:
             host.write("127.0.0.1\t"+d['ServerName']+"\n")
 
     def updateVhostfile(self, data):
-        newVhost = open(self.vhostDirectory+'/httpd-vhosts-copie.conf', 'w')
+        newVhost = open(self.vhostDirectory+'/httpd-vhosts-vhostswitch.conf', 'w')
         for d in data:
             if d['default'] == 1:
                 content = ""
