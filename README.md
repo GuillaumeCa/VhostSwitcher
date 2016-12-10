@@ -1,6 +1,7 @@
 # VhostSwitcher
 *This app is in development*
 ![Main window](img/main.png)
+
 This app is built with **pyObjc** and helps you manage Apache virtual hosts on dev environments.
 It also updates the `hosts` file for each virtual host.
 
