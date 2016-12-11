@@ -77,15 +77,34 @@ class Data:
         self.writeToHost(data)
         print 'ok'
 
+    def writeDataHost(self, host, data):
+        host.write("# VhostSwitcher\n")
+        for d in data:
+            host.write("127.0.0.1\t" + d['ServerName'] + "\n")
+        host.write("\n")
+
     def writeToHost(self, data):
         data = list(data)
-        host = open('/private/etc/hosts', 'r+')
-        for h in host.readlines():
-            for i, d in enumerate(data):
-                if h == "127.0.0.1\t"+d['ServerName']+"\n":
-                    print data.pop(i)
-        for d in data:
-            host.write("127.0.0.1\t"+d['ServerName']+"\n")
+        savedHostFile = open('/private/etc/hosts', 'r')
+        saved = savedHostFile.readlines()
+        host = open('/private/etc/hosts', 'w')
+        stop = True
+        writingEnd = False
+        for line in saved:
+            if line == "# VhostSwitcher\n":
+                print "found config"
+                stop = False
+            if line == "\n" and stop == False :
+                print "found end of config"
+                stop = True
+            if stop == False and not(writingEnd):
+                self.writeDataHost(host, data)
+                writingEnd = True
+            elif stop == True:
+                host.write(line)
+        if writingEnd == False:
+            host.write('\n')
+            self.writeDataHost(host, data)
 
     def updateVhostfile(self, data):
         newVhost = open(self.conf + '/httpd-vhosts-vhostswitch.conf', 'w')

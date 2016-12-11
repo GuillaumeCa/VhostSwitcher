@@ -13,6 +13,7 @@ from setuptools import setup
 APP = ['VhostSwitcher.py']
 DATA_FILES = ["VhostSwitcher.xib"]
 APP_NAME = "VhostSwitcher"
+VERSION = "0.0.2"
 OPTIONS = {
     "iconfile": "img/icon.icns",
     'plist': {
@@ -20,8 +21,8 @@ OPTIONS = {
         'CFBundleDisplayName': APP_NAME,
         'CFBundleGetInfoString': "Easily switch Apache VirtualHosts",
         'CFBundleIdentifier': "com.guillaumeca.macos.vhostswitcher",
-        'CFBundleVersion': "0.0.1",
-        'CFBundleShortVersionString': "0.0.1",
+        'CFBundleVersion': VERSION,
+        'CFBundleShortVersionString': VERSION,
         'NSHumanReadableCopyright': u"Copyright © 2016, Guillaume Carré, All Rights Reserved"
     }
 }
