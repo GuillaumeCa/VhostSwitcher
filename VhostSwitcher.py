@@ -1,6 +1,4 @@
 #!/usr/bin/python
-# from Cocoa import NSWindowController, NSApplication, objc, NSApp, NSTableViewAnimationEffectFade
-
 import os
 import json
 
@@ -9,7 +7,7 @@ from AppKit import NSWindowController, NSApplication, NSApp, NSTableViewAnimatio
 from PyObjCTools import AppHelper
 from Foundation import NSObject, NSIndexSet
 import objc
-
+import Quartz
 
 class Data:
     conf = os.path.expanduser('~/Library/Application Support/VhostSwitcher')
@@ -96,7 +94,7 @@ class Data:
                 content = ""
                 content += "ServerName " + d['ServerName'] + "\n"
                 content += "DocumentRoot " + '"'+d['DocumentRoot']+'"'
-                structure = "<VirtualHost _default_*:80>\n{}\n</VirtualHost>\n\n".format(content)
+                structure = "<VirtualHost _default_:80>\n{}\n</VirtualHost>\n\n".format(content)
                 newVhost.write(structure)
         for d in data:
             if d['default'] != 1:
@@ -220,15 +218,6 @@ class TableModel(NSObject):
         #self.editedFields[rowIndex] = anObject
         self.updateList('Name', anObject)
 
-    # delegate methods
-    # def tableView_shouldSelectRow_(self, aTableView, rowIndex):
-    #     # only allow odd rows to be selected
-    #     return rowIndex % 2
-    #
-    # def tableView_shouldEditTableColumn_row_(self, aTableView, aTableColumn, rowIndex):
-    #     # only allow cells in the second column in odd rows to be edited
-    #     return (rowIndex % 2) and aTableColumn.identifier() == "col_2"
-
     def tableViewSelectionDidChange_(self, notification):
         # Always use this delegate method instead of using the action to do something
         # when the selection changed: the action method is only called when the selection
@@ -240,10 +229,6 @@ class TableModel(NSObject):
         self.txtServName.setStringValue_(self.data.liste[self.row]['ServerName'])
         self.defaultSite.setState_(self.data.liste[self.row]['default'])
 
-
-    # def windowShouldClose_(self, sender):
-    #     print("Should Close?")
-    #     return 0
 
     def windowWillClose_(self, aNotification):
         print('window will close')

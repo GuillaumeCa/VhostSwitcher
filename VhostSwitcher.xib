@@ -147,7 +147,7 @@
                     </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="1250" y="273"/>
+            <point key="canvasLocation" x="1247" y="294"/>
         </window>
         <customObject id="XwT-Z5-cKo" userLabel="TableModel" customClass="TableModel">
             <connections>
@@ -365,12 +365,14 @@
             </items>
         </menu>
         <window title="About" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="ONN-UD-vL7">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="207" width="266" height="183"/>
+            <rect key="contentRect" x="196" y="207" width="266" height="325"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <value key="minSize" type="size" width="266" height="325"/>
+            <value key="maxSize" type="size" width="266" height="325"/>
             <view key="contentView" id="0Ue-OU-Xik">
-                <rect key="frame" x="0.0" y="0.0" width="266" height="183"/>
+                <rect key="frame" x="0.0" y="0.0" width="266" height="325"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WiC-1G-yex">
@@ -400,9 +402,17 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Gr-Hq-WB8">
+                        <rect key="frame" x="49" y="181" width="168" height="124"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon" id="O5O-uu-53h"/>
+                    </imageView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="1829" y="123.5"/>
+            <point key="canvasLocation" x="1829" y="102.5"/>
         </window>
     </objects>
+    <resources>
+        <image name="icon" width="353" height="460"/>
+    </resources>
 </document>
