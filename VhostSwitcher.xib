@@ -34,7 +34,7 @@
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
                                         <tableColumn identifier="col" width="182" minWidth="10" maxWidth="3.4028234663852886e+38" id="ObH-oi-g1e">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Sites">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Websites">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -85,9 +85,9 @@
                         </connections>
                     </segmentedControl>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mbH-Sw-RsF">
-                        <rect key="frame" x="228" y="397" width="101" height="17"/>
+                        <rect key="frame" x="228" y="397" width="131" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Nom du serveur" id="ZGd-s7-nea">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name of the server" id="ZGd-s7-nea">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -106,9 +106,9 @@
                         </connections>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eGS-Pv-zsH">
-                        <rect key="frame" x="228" y="445" width="95" height="17"/>
+                        <rect key="frame" x="228" y="445" width="149" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Racine du site" id="W9s-cb-I1u">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Website root directory" id="W9s-cb-I1u">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -127,17 +127,17 @@
                         </connections>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mn8-47-YPT">
-                        <rect key="frame" x="556" y="416" width="90" height="32"/>
+                        <rect key="frame" x="560" y="416" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="modifier" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UBg-Cn-qvj">
+                        <buttonCell key="cell" type="push" title="modify" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UBg-Cn-qvj">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <button toolTip="Un seul site peut être définit par défaut" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NBV-ub-pok">
-                        <rect key="frame" x="228" y="340" width="112" height="18"/>
+                        <rect key="frame" x="228" y="340" width="125" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Site par défaut" bezelStyle="regularSquare" imagePosition="left" inset="2" id="CMa-L2-Gz2">
+                        <buttonCell key="cell" type="check" title="Default website" bezelStyle="regularSquare" imagePosition="left" inset="2" id="CMa-L2-Gz2">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                             <connections>
@@ -159,11 +159,14 @@
         </customObject>
         <menu title="MainWindow" systemMenu="main" id="JIR-cd-jHf" userLabel="MainMenu">
             <items>
-                <menuItem title="NewApplication" id="zyh-x1-AZw">
-                    <menu key="submenu" title="NewApplication" systemMenu="apple" id="Fzz-cE-gaN">
+                <menuItem title="VhostSwitcher" id="zyh-x1-AZw">
+                    <menu key="submenu" title="VhostSwitcher" systemMenu="apple" id="Fzz-cE-gaN">
                         <items>
-                            <menuItem title="About NewApplication" id="tAB-Wp-Q4O">
+                            <menuItem title="About VhostSwitcher" id="tAB-Wp-Q4O">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="makeKeyAndOrderFront:" target="ONN-UD-vL7" id="BJ1-e4-vh6"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="Preferences..." id="4ch-se-R7f"/>
                             <menuItem isSeparatorItem="YES" id="LW5-dr-6B9">
@@ -361,5 +364,45 @@
                 </menuItem>
             </items>
         </menu>
+        <window title="About" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="ONN-UD-vL7">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="207" width="266" height="183"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" id="0Ue-OU-Xik">
+                <rect key="frame" x="0.0" y="0.0" width="266" height="183"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WiC-1G-yex">
+                        <rect key="frame" x="47" y="133" width="172" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="VhostSwitcher" id="VB8-m0-Nzk">
+                            <font key="font" metaFont="system" size="25"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PNt-6i-Vvp">
+                        <rect key="frame" x="76" y="107" width="114" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Guillaume Carré" id="gBp-L3-6ih">
+                            <font key="font" metaFont="system" size="14"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IwM-RE-gYQ">
+                        <rect key="frame" x="18" y="20" width="230" height="64"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="This app lets you easily switch between your default Apache virtual hosts and manage them" id="XOV-4R-ReE">
+                            <font key="font" metaFont="system" size="14"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="1829" y="123.5"/>
+        </window>
     </objects>
 </document>

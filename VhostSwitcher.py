@@ -1,15 +1,22 @@
 #!/usr/bin/python
-from Cocoa import NSWindowController, NSApplication, objc, NSApp, NSTableViewAnimationEffectFade
-from Foundation import NSObject, NSIndexSet
+# from Cocoa import NSWindowController, NSApplication, objc, NSApp, NSTableViewAnimationEffectFade
+
 import os
 import json
+
+from AppKit import NSWindowController, NSApplication, NSApp, NSTableViewAnimationEffectFade
+
+from PyObjCTools import AppHelper
+from Foundation import NSObject, NSIndexSet
+import objc
+
 
 class Data:
     conf = os.path.expanduser('~/Library/Application Support/VhostSwitcher')
 
     def __init__(self):
         vhostFile = '/private/etc/apache2/extra/httpd-vhosts.conf'
-        self.vhostDirectory = '/private/etc/apache2/extra/'
+        self.vhostDirectory = '/private/etc/apache2/extra'
         if self.fileExist('/liste.json'):
             print 'loading file'
             self.liste = self.loadJsonFile('/liste.json')
@@ -83,7 +90,7 @@ class Data:
             host.write("127.0.0.1\t"+d['ServerName']+"\n")
 
     def updateVhostfile(self, data):
-        newVhost = open(self.vhostDirectory+'/httpd-vhosts-vhostswitch.conf', 'w')
+        newVhost = open(self.conf + '/httpd-vhosts-vhostswitch.conf', 'w')
         for d in data:
             if d['default'] == 1:
                 content = ""
